@@ -79,6 +79,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+    const mainSlider = new Swiper('.js-promo-slider', {
+        slidesPerView: 1,
+        speed: 600,
+        loop: true,
+        autoplay: {
+            delay: 10000,
+        },
+        pagination: {
+            el: '.js-promo-slider .swiper-pagination',
+            clickable: true,
+        }
+    });
+
     function sliderinit() {
         const sliders = document.querySelectorAll('.js-swiper-index'),
             prevArrow = document.querySelectorAll('.js-swiper-navigation .prev'),
