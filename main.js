@@ -13,21 +13,21 @@ Fancybox.bind("[data-fancybox]", {
     // Your custom options
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const headerBurger = document.getElementById("js-header-burger");
-    const burgerMenu = document.getElementById("js-burger-menu");
-    const burgerClose = document.getElementById("js-burger-close");
-
-    headerBurger.addEventListener("click", () => {
-        burgerMenu.classList.toggle("active");
-        document.documentElement.classList.toggle("lock");
-    });
-
-    burgerClose.addEventListener("click", () => {
-        burgerMenu.classList.remove("active");
-        document.documentElement.classList.remove("lock");
-    });
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//     const headerBurger = document.getElementById("js-header-burger");
+//     const burgerMenu = document.getElementById("js-burger-menu");
+//     const burgerClose = document.getElementById("js-burger-close");
+//
+//     headerBurger.addEventListener("click", () => {
+//         burgerMenu.classList.toggle("active");
+//         document.documentElement.classList.toggle("lock");
+//     });
+//
+//     burgerClose.addEventListener("click", () => {
+//         burgerMenu.classList.remove("active");
+//         document.documentElement.classList.remove("lock");
+//     });
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.querySelector(".header-search input");
@@ -48,3 +48,30 @@ document.addEventListener("DOMContentLoaded", function () {
         resetButton.style.display = "none";
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    function sliderinit() {
+        const sliders = document.querySelectorAll('.js-swiper-index'),
+            prevArrow = document.querySelectorAll('.js-swiper-navigation .prev'),
+            nextArrow = document.querySelectorAll('.js-swiper-navigation .next');
+
+        sliders.forEach((slider, index) => {
+            let projectSlider = new Swiper(slider, {
+                slidesPerView: 5,
+                spaceBetween: 20,
+                speed: 300,
+                loop: true,
+                navigation: {
+                    nextEl: nextArrow[index],
+                    prevEl: prevArrow[index],
+                },
+                autoplay: {
+                    delay: 6000,
+                }
+            });
+        })
+    }
+
+    sliderinit()
+});
+
