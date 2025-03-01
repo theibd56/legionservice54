@@ -13,6 +13,35 @@ Fancybox.bind("[data-fancybox]", {
     // Your custom options
 });
 
+// Подключаем Yandex Maps API
+const script = document.createElement('script');
+script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU";
+script.type = "text/javascript";
+document.head.appendChild(script);
+
+// Инициализация карты после загрузки Yandex Maps API
+script.onload = () => {
+    ymaps.ready(init);
+
+    function init() {
+        const map = new ymaps.Map('map', {
+            center: [54.946557, 82.924441], // Центр карты
+            zoom: 17, // Масштаб
+            controls: [] // Контроллеры
+        });
+
+        const marker = new ymaps.Placemark([54.946557, 82.924441], {
+            iconLayout: 'default#image',
+            iconImageHref: 'https://img.icons8.com/?size=100&id=7880&format=png&color=339AF0',
+            iconImageSize: [50, 50],
+            iconImageOffset: [-25, -50]
+        });
+
+        map.geoObjects.add(marker);
+    }
+
+};
+
 // document.addEventListener("DOMContentLoaded", () => {
 //     const headerBurger = document.getElementById("js-header-burger");
 //     const burgerMenu = document.getElementById("js-burger-menu");
