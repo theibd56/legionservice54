@@ -45,7 +45,16 @@ a:active, /* активная/посещенная ссылка */
 a:hover,  /* при наведении */
 a {
   text-decoration: none;
-  //color: var(--main-color);
+  transition: all .3s ease;
+}
+
+a:hover {
+  color: var(--akcent-1);
+  border-color: var(--akcent-1);
+}
+
+svg, path {
+  transition: all .3s ease;
 }
 
 

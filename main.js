@@ -28,3 +28,23 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.classList.remove("lock");
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.querySelector(".header-search input");
+    const resetButton = document.getElementById("js-search-reset");
+
+    resetButton.style.display = "none";
+
+    searchInput.addEventListener("input", function () {
+        if (searchInput.value.trim().length > 0) {
+            resetButton.style.display = "flex";
+        } else {
+            resetButton.style.display = "none";
+        }
+    });
+
+    resetButton.addEventListener("click", function () {
+        searchInput.value = "";
+        resetButton.style.display = "none";
+    });
+});
