@@ -167,6 +167,31 @@ document.querySelectorAll('.productCard-cart').forEach(cart => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll(".hit-tabs div");
+    const contents = document.querySelectorAll(".hit-slider");
+
+    const defaultTab = document.querySelector('.hit-tabs div[data-tab="hit"]');
+    const defaultContent = document.querySelector('.hit-slider[data-tab="hit"]');
+
+    if (defaultTab && defaultContent) {
+        defaultTab.classList.add("active");
+        defaultContent.classList.add("active");
+    }
+
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", function () {
+            const target = this.getAttribute("data-tab");
+
+            tabs.forEach((t) => t.classList.remove("active"));
+            contents.forEach((c) => c.classList.remove("active"));
+
+            this.classList.add("active");
+            document.querySelector(`.hit-slider[data-tab="${target}"]`).classList.add("active");
+        });
+    });
+});
+
 
 
 
