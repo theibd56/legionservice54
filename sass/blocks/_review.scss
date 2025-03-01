@@ -1,0 +1,143 @@
+.review {
+  margin-bottom: 60px;
+  &-heading {
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  &-title {
+    margin-bottom: 0;
+  }
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  &-link {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+
+    display: inline-flex;
+    padding: 11px 13px;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+    background: #08A826;
+    &.white {
+      color: var(--2-, #535353) !important;
+      border: 1px solid rgba(83, 83, 83, 0.55);
+      background: #FFF;
+    }
+    &:hover {
+      color: #FFF;
+      opacity: 0.7;
+    }
+  }
+  &-slider {
+    position: relative;
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+    .swiper-slide {
+      height: auto;
+    }
+    &__navigation {
+      div {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 25px;
+        background: #FFF;
+        box-shadow: 0px 1px 4px 0px #B8B8B8;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        &.prev {
+          left: -60px;
+        }
+        &.next {
+          right: -60px;
+        }
+        &.swiper-button-lock {
+          display: none;
+        }
+        &:hover {
+          path {
+            fill: #08A826;
+            fill-opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  &-item {
+    padding: 28px;
+    border-radius: 20px;
+    background: #F3F4F6;
+
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    &__heading {
+      margin-bottom: 18px;
+    }
+    &__date {
+      color: var(--2-, #535353);
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 13.01px; /* 130.1% */
+      letter-spacing: 0.8px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    &__name {
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    &__stars {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    &__text {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      max-height: 8rem;
+
+      p {
+        margin: 0;
+      }
+      &.expanded {
+        -webkit-line-clamp: unset;
+        max-height: none;
+      }
+      &.clamped + .review-item__more {
+        display: block;
+      }
+    }
+    &__more {
+      color: #08A826;
+      font-size: 14px;
+      font-weight: 400;
+      border-bottom: 1px dashed #08A826;
+
+      margin-top: 14px;
+      cursor: pointer;
+      display: none;
+    }
+  }
+}

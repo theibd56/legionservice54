@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let projectSlider = new Swiper(slider, {
                 slidesPerView: 5,
                 spaceBetween: 20,
-                speed: 300,
+                speed: 600,
                 loop: true,
                 navigation: {
                     nextEl: nextArrow[index],
@@ -102,5 +102,50 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     sliderinit()
+
+    const reviewSlider = new Swiper('.js-review-slider', {
+        slidesPerView: 2,
+        spaceBetween: 24,
+        speed: 600,
+        loop: true,
+        navigation: {
+            nextEl: '.js-review-navigation .next',
+            prevEl: '.js-review-navigation .prev',
+        },
+        autoplay: {
+            delay: 6000,
+        }
+    });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (document.querySelectorAll('.review-item').length > 0) {
+        document.querySelectorAll('.review-item').forEach(item => {
+            const textElement = item.querySelector('.js-review-text');
+            const button = item.querySelector('.js-review-more');
+
+            const isOverflowing = textElement.scrollHeight > 120;
+
+            console.log('scrollHeight:', textElement.scrollHeight);
+            console.log('clientHeight:', textElement.clientHeight);
+            console.log('Переполнение:', isOverflowing);
+
+            if (isOverflowing) {
+                textElement.classList.add('clamped');
+            }
+
+            button.addEventListener('click', () => {
+                const isExpanded = textElement.classList.toggle('expanded');
+                button.textContent = isExpanded ? 'Скрыть' : 'Читать полностью';
+            });
+        });
+    }
+});
+
+
+
+
+
+
+
 
