@@ -1,0 +1,21 @@
+{
+  "name": "legionservice54",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
+    "maska": "^3.1.0",
+    "sass-embedded": "^1.85.1",
+    "swiper": "^11.2.4",
+    "vite-plugin-handlebars": "^2.0.0"
+  }
+}
