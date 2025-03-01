@@ -1,0 +1,235 @@
+.productCard {
+  border-radius: 12px;
+  background: #FFF;
+  box-shadow: 0px 0px 0px 1px #DADCDE inset;
+  padding: 18px;
+  padding-bottom: 75px;
+
+  position: relative;
+  &-image {
+    width: 100%;
+    height: 190px;
+    margin-bottom: 9px;
+    position: relative;
+    &:hover {
+      a {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    a {
+      color: #1A1A1A;
+      font-size: 14px;
+      font-weight: 400;
+
+      display: flex;
+      padding: 8px 12px;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+
+      border-radius: 5px;
+      background: #FFF;
+      box-shadow: 0px 2px 4.3px 0px rgba(0, 0, 0, 0.10);
+
+      white-space: nowrap;
+
+      opacity: 0;
+      visibility: hidden;
+      &:hover {
+        color: #1A1A1A;
+        opacity: 0.7;
+      }
+    }
+  }
+  &-stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 10px;
+  }
+  &-title {
+    color: #1C2126;
+    font-size: 14px;
+    font-weight: 600;
+    height: 60px;
+
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  &-descr {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    color: #484F55;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 133.333%; /* 133.333% */
+  }
+  &-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: calc(100% - 34px);
+    position: absolute;
+    bottom: 17px;
+    left: 17px;
+  }
+  &-price {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      color: #484F55;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 133.333%; /* 133.333% */
+      span {
+        text-decoration-line: line-through;
+      }
+      div {
+        color: #FFF;
+        border-radius: 4px;
+        background: #FC482D;
+        display: flex;
+        padding: 1px 6px;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    &__bottom {
+      color: var(--, #1A1A1A);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 150%; /* 150% */
+    }
+  }
+  &-cart {
+    &__ico {
+      display: flex;
+      width: 49px;
+      height: 49px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: #08A826;
+      transition: all .3s ease;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    &__count {
+      width: 66px;
+      position: relative;
+
+      border-radius: 10px;
+      background: #F3F4F6;
+
+      display: none;
+      align-items: center;
+      padding: 10px 8px;
+      input {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        border: none;
+        background: none;
+        outline: none;
+        &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+          /* display: none; <- Crashes Chrome on hover */
+          -webkit-appearance: none;
+          margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+        }
+      }
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 8px;
+
+        border: none;
+        background: none;
+        outline: none;
+
+        color: var(--, #1A1A1A);
+        font-size: 18px;
+        font-weight: 400;
+
+        cursor: pointer;
+        &.dec {
+          left: 8px;
+        }
+        &.inc {
+          right: 8px;
+        }
+      }
+    }
+
+  }
+
+  &-banner {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    span {
+      color: #FFF;
+      font-size: 12px;
+      font-weight: 400;
+      display: flex;
+      padding: 4px 11px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 2px;
+    }
+    &__popular {
+      background: #FC482D;
+    }
+    &__hit {
+      background: #2992D9;
+    }
+  }
+  &-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

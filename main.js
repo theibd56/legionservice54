@@ -126,10 +126,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const isOverflowing = textElement.scrollHeight > 120;
 
-            console.log('scrollHeight:', textElement.scrollHeight);
-            console.log('clientHeight:', textElement.clientHeight);
-            console.log('Переполнение:', isOverflowing);
-
             if (isOverflowing) {
                 textElement.classList.add('clamped');
             }
@@ -141,6 +137,36 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+document.querySelectorAll('.productCard-cart').forEach(cart => {
+    const icon = cart.querySelector('.js-card-ico');
+    const countContainer = cart.querySelector('.js-card-count');
+    const input = countContainer.querySelector('input');
+    const btnInc = countContainer.querySelector('.inc');
+    const btnDec = countContainer.querySelector('.dec');
+
+    const maxCount = parseInt(input.getAttribute('max')) || 99;
+
+    icon.addEventListener('click', () => {
+        icon.style.display = 'none';
+        countContainer.style.display = 'flex';
+    });
+
+    btnInc.addEventListener('click', () => {
+        const currentValue = parseInt(input.value);
+        if (currentValue < maxCount) {
+            input.value = currentValue + 1;
+        }
+    });
+
+    btnDec.addEventListener('click', () => {
+        const currentValue = parseInt(input.value);
+        if (currentValue > 1) {
+            input.value = currentValue - 1;
+        }
+    });
+});
+
 
 
 
