@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>legionservice54 cart</title>
+	</head>
+	<body>
+
+		{{> _header}}
+
+		<main>
+			<section class="breadcrumbs">
+				<div class="container">
+					<div class="breadcrumbs-content">
+						<a href="/" class="breadcrumbs-item">
+							Каталог
+						</a>
+						<span class="breadcrumbs-item">
+						Корзина
+					</span>
+					</div>
+				</div>
+			</section>
+
+			<section class="cart">
+				<div class="cart-container container">
+					<div class="cart-heading">
+						<h2 class="cart-title">
+							Корзина
+						</h2>
+						<div class="cart-count">
+							0 товаров
+						</div>
+					</div>
+					<div class="cart-empty">
+						<div class="cart-empty__text">
+							Ваша корзина пока пуста. Акции, специальные предложения и обзоры самых интересных товаров на главной странице  помогут вам определиться с выбором!
+						</div>
+						<a href="#" class="cart-empty__link">На главную</a>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		{{> _footer}}
+
+		<script type="module" src="/main.js"></script>
+	</body>
+</html>

@@ -233,4 +233,31 @@
     line-height: normal;
     border-bottom: 1px  dashed #08A826;
   }
+
+  //cart empty
+  &-empty {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    max-width: 990px;
+    &__link {
+      color: #FFF;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 15.71px; /* 98.188% */
+
+      display: inline-flex;
+      padding: 15px 37px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      background: #08A826;
+      &:hover {
+        opacity: 0.7;
+        color: #fff;
+      }
+    }
+  }
 }

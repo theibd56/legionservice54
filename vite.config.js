@@ -10,6 +10,7 @@ export default defineConfig({
                 catalog: resolve(__dirname, '/pages/_catalog.html'),
                 about: resolve(__dirname, '/pages/_about.html'),
                 cart: resolve(__dirname, '/pages/_cart.html'),
+                cartEmpty: resolve(__dirname, '/pages/_cart-empty.html'),
             },
         },
     },
