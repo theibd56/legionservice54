@@ -1,4 +1,6 @@
 import Swiper from 'swiper/bundle';
+import * as noUiSlider from 'nouislider';
+import 'nouislider/dist/nouislider.css';
 import { Fancybox } from "@fancyapps/ui";
 import { Mask, MaskInput } from "maska"
 
@@ -243,7 +245,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+const slider = document.getElementById('priceRange');
 
+noUiSlider.create(slider, {
+    start: [0, 1000],
+    connect: true,
+    range: {
+        'min': 0,
+        'max': 1000
+    }
+});
 
 
 
