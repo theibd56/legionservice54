@@ -151,34 +151,39 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-document.querySelectorAll('.productCard-cart').forEach(cart => {
-    const icon = cart.querySelector('.js-card-ico');
-    const countContainer = cart.querySelector('.js-card-count');
-    const input = countContainer.querySelector('input');
-    const btnInc = countContainer.querySelector('.inc');
-    const btnDec = countContainer.querySelector('.dec');
+document.addEventListener("DOMContentLoaded", function () {
+    if (document.querySelectorAll('.productCard-cart').length > 0) {
+        document.querySelectorAll('.productCard-cart').forEach(cart => {
+            const icon = cart.querySelector('.js-card-ico');
+            const countContainer = cart.querySelector('.js-card-count');
+            const input = countContainer.querySelector('input');
+            const btnInc = countContainer.querySelector('.inc');
+            const btnDec = countContainer.querySelector('.dec');
 
-    const maxCount = parseInt(input.getAttribute('max')) || 99;
+            const maxCount = parseInt(input.getAttribute('max')) || 99;
 
-    icon.addEventListener('click', () => {
-        icon.style.display = 'none';
-        countContainer.style.display = 'flex';
-    });
+            icon.addEventListener('click', () => {
+                icon.style.display = 'none';
+                countContainer.style.display = 'flex';
+            });
 
-    btnInc.addEventListener('click', () => {
-        const currentValue = parseInt(input.value);
-        if (currentValue < maxCount) {
-            input.value = currentValue + 1;
-        }
-    });
+            btnInc.addEventListener('click', () => {
+                const currentValue = parseInt(input.value);
+                if (currentValue < maxCount) {
+                    input.value = currentValue + 1;
+                }
+            });
 
-    btnDec.addEventListener('click', () => {
-        const currentValue = parseInt(input.value);
-        if (currentValue > 1) {
-            input.value = currentValue - 1;
-        }
-    });
-});
+            btnDec.addEventListener('click', () => {
+                const currentValue = parseInt(input.value);
+                if (currentValue > 1) {
+                    input.value = currentValue - 1;
+                }
+            });
+        });
+    }
+})
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const tabs = document.querySelectorAll(".hit-tabs div");
@@ -204,6 +209,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelectorAll('.productCard').length > 0) {
+        const gridViewButton = document.querySelector('.js-view-grid');
+        const rowViewButton = document.querySelector('.js-view-row');
+        const productCards = document.querySelectorAll('.productCard');
+        const enableGridView = () => {
+            gridViewButton.classList.add('active');
+            rowViewButton.classList.remove('active');
+            productCards.forEach(card => card.classList.remove('row'));
+        };
+
+        const enableRowView = () => {
+            rowViewButton.classList.add('active');
+            gridViewButton.classList.remove('active');
+            productCards.forEach(card => card.classList.add('row'));
+        };
+
+        gridViewButton.addEventListener('click', enableGridView);
+        rowViewButton.addEventListener('click', enableRowView);
+    }
+});
+
 
 
 
