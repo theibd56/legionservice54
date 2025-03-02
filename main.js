@@ -184,7 +184,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 })
 
-
 document.addEventListener("DOMContentLoaded", function () {
     const tabs = document.querySelectorAll(".hit-tabs div");
     const contents = document.querySelectorAll(".hit-slider");
@@ -229,6 +228,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         gridViewButton.addEventListener('click', enableGridView);
         rowViewButton.addEventListener('click', enableRowView);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.catalog-menu')) {
+        const catalogTitle = document.querySelector('.catalog-menu__title');
+        const catalogList = document.querySelector('.catalog-menu__list');
+
+        catalogTitle.addEventListener('click', () => {
+            catalogTitle.classList.toggle('active');
+            catalogList.classList.toggle('active');
+        });
     }
 });
 
