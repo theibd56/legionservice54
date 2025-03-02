@@ -144,6 +144,9 @@
     display: grid;
     grid-template: auto / repeat(4, 1fr);
     gap: 20px;
+    &.row {
+      grid-template: auto / 1fr;
+    }
   }
 
   //catalog-paginate

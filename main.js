@@ -219,12 +219,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const enableGridView = () => {
             gridViewButton.classList.add('active');
             rowViewButton.classList.remove('active');
+            document.querySelector('.catalog-list').classList.remove('row');
             productCards.forEach(card => card.classList.remove('row'));
         };
 
         const enableRowView = () => {
             rowViewButton.classList.add('active');
             gridViewButton.classList.remove('active');
+            document.querySelector('.catalog-list').classList.add('row');
             productCards.forEach(card => card.classList.add('row'));
         };
 
