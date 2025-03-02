@@ -131,6 +131,16 @@ document.addEventListener("DOMContentLoaded", function () {
             delay: 6000,
         }
     });
+
+    const advantagesSlider = new Swiper('.js-advantages-slider', {
+        slidesPerView: 4,
+        spaceBetween: 24,
+        speed: 600,
+        loop: true,
+        autoplay: {
+            delay: 6000,
+        }
+    });
 });
 
 document.addEventListener("DOMContentLoaded", function () {

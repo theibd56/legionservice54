@@ -32,5 +32,16 @@
       margin-bottom: 0;
     }
   }
+  &-slider {
+    .swiper {
+      padding: 10px 0;
+    }
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+    .swiper-slide {
+      height: auto;
+    }
+  }
 
 }
