@@ -1,0 +1,349 @@
+.product {
+
+  //product heading
+  &-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 30px;
+    &__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      a {
+        width: 30px;
+        height: 30px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #F3F4F6;
+        border-radius: 50%;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  &-stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  &-title {
+    margin-bottom: 0;
+  }
+
+  //product top
+  &-top {
+    width: 100%;
+    display: flex;
+    gap: 25px;
+  }
+  &-left {
+    display: flex;
+    gap: 18px;
+    max-width: 687px;
+  }
+  &-banner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+
+    &__item {
+      display: inline-flex;
+
+      color: #FFF;
+      font-size: 12px;
+      font-weight: 400;
+
+      padding: 5px 9px;
+      border-radius: 2px;
+
+      &.hit {
+        background: #2992D9;
+        margin: 0;
+      }
+      &.days {
+        background: #FC482D;
+      }
+    }
+  }
+  &-right {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  //product sliders
+  &-navigate {
+    max-width: 60px;
+    max-height: 400px;
+    .swiper {
+      max-height: 400px;
+    }
+    &__item {
+      width: 60px !important;
+      height: 60px !important;
+      border-radius: 4px;
+      transition: all .3s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      &.swiper-slide-active {
+        border: 1px solid var(--1, #08A826);
+        cursor: default;
+      }
+    }
+    &__arrow {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+    }
+  }
+  &-slider {
+    width: calc(100% - 78px);
+    position: relative;
+    .swiper {
+      height: 500px;
+    }
+    &__item {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  //product info
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &__title {
+      color: var(--, #1A1A1A);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 133.333%; /* 133.333% */
+    }
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    &__item {
+      color: #484F55;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 150%; /* 28px */
+      margin: 0;
+    }
+    &__link {
+      color: var(--1, #08A826);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px; /* 114.286% */
+      transition: all .3s ease;
+
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  //product aside
+  &-aside {
+    width: 282px;
+    max-width: 282px;
+
+    border-radius: 20px;
+    border: 1px solid rgba(8, 168, 38, 0.55);
+    background: #FFF;
+    box-shadow: 0px 1px 9.1px 0px rgba(4, 94, 21, 0.21);
+    padding: 25px;
+    &__bottom {
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    &__info {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+  }
+  &-price {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #DADCDE;
+    &__top {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      color: #484F55;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px; /* 133.333% */
+      p {
+        color: #FFF;
+        font-size: 12px;
+        font-weight: 500;
+        display: flex;
+        padding: 1px 6px 3px 7px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        background: #FC482D;
+        margin: 0;
+      }
+    }
+    &__bottom {
+      color: var(--, #1A1A1A);
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 24px; /* 85.714% */
+    }
+  }
+  &-button {
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+    background: #08A826;
+
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 15.71px; /* 98.188% */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all .3s ease;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  &-link {
+    color: var(--1, #08A826);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    border-bottom: 1px dashed #08A826;
+    transition: all .3s ease;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  &-count {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--1, #08A826);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 15px; /* 107.143% */
+    span {
+      margin-top: 2px;
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 6px;
+      background: var(--1, #08A826);
+    }
+  }
+  &-cheaper {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    span {
+      color: #666;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20.3px; /* 145% */
+
+      border-bottom: 1px dashed #666;
+    }
+    transition: all .3s ease;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  &-counter {
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid #ECECEC;
+    background: #F4F5F6;
+
+    display: flex;
+    align-items: center;
+    padding: 0 11px;
+    button {
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      background: none;
+      border: none;
+      outline: none;
+
+      cursor: pointer;
+    }
+    input {
+      height: 46px;
+      width: 100%;
+      text-align: center;
+
+      background: none;
+      border: none;
+      outline: none;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+      }
+    }
+  }
+}

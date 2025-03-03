@@ -284,16 +284,76 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-const slider = document.getElementById('priceRange');
+document.addEventListener('DOMContentLoaded', () => {
+    const productSliderNav = new Swiper('.product-navigate .swiper', {
+        centeredSlidesBounds: true,
+        slidesPerView: 6,
+        slidesPerGroup: 1,
+        spaceBetween: 8,
+        speed: 400,
+        watchOverflow: true,
+        slideToClickedSlide: true,
+        loop: false,
+        observer: true,
+        observeParents: true,
+        direction: 'vertical',
+    });
 
-noUiSlider.create(slider, {
-    start: [0, 1000],
-    connect: true,
-    range: {
-        'min': 0,
-        'max': 1000
-    }
+    const productSliderMain = new Swiper('.product-slider .swiper', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: false,
+        watchOverflow: true,
+        preventInteractionOnTransition: true,
+        observer: true,
+        observeParents: true,
+        thumbs: {
+            swiper: productSliderNav,
+        },
+        navigation: {
+            nextEl: ".product-navigate__arrow",
+        },
+    });
+
+    const updateActiveSlideClass = (activeIndex) => {
+        productSliderNav.slides.forEach(slide => {
+            slide.classList.remove('swiper-slide-active');
+        });
+        if (productSliderNav.slides[activeIndex]) {
+            productSliderNav.slides[activeIndex].classList.add('swiper-slide-active');
+        }
+    };
+    productSliderMain.on('slideChange', function() {
+        const activeIndex = productSliderMain.activeIndex;
+        productSliderNav.slideTo(activeIndex);
+        updateActiveSlideClass(activeIndex);
+    });
+    productSliderNav.on('slideChange', function() {
+        const activeIndex = productSliderNav.activeIndex;
+        productSliderMain.slideTo(activeIndex);
+        updateActiveSlideClass(activeIndex);
+    });
+    updateActiveSlideClass(productSliderMain.activeIndex);
+    productSliderNav.slides.forEach((slide, index) => {
+        slide.addEventListener('click', () => {
+            productSliderMain.slideTo(index);
+        });
+    });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('priceRange');
+    noUiSlider.create(slider, {
+        start: [0, 1000],
+        connect: true,
+        range: {
+            'min': 0,
+            'max': 1000
+        }
+    });
+});
+
+
 
 
 

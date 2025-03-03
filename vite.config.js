@@ -11,6 +11,7 @@ export default defineConfig({
                 about: resolve(__dirname, '/pages/_about.html'),
                 cart: resolve(__dirname, '/pages/_cart.html'),
                 cartEmpty: resolve(__dirname, '/pages/_cart-empty.html'),
+                product: resolve(__dirname, '/pages/_product.html'),
             },
         },
     },
