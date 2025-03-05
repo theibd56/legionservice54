@@ -353,7 +353,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll(".product-tabs__item");
+    const contents = document.querySelectorAll(".product-content__item");
 
+    const defaultTab = document.querySelector('.product-tabs__item[data-tab="characteristic"]');
+    const defaultContent = document.querySelector('.product-content__item[data-tab="characteristic"]');
+
+    if (defaultTab && defaultContent) {
+        defaultTab.classList.add("active");
+        defaultContent.classList.add("active");
+    }
+
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", function () {
+            const target = this.getAttribute("data-tab");
+
+            tabs.forEach((t) => t.classList.remove("active"));
+            contents.forEach((c) => c.classList.remove("active"));
+
+            this.classList.add("active");
+            document.querySelector(`.product-content__item[data-tab="${target}"]`).classList.add("active");
+        });
+    });
+});
 
 
 
