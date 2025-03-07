@@ -87,7 +87,7 @@
     align-items: center;
     justify-content: space-between;
 
-    width: calc(100% - 34px);
+    width: calc(100% - 36px);
     position: absolute;
     bottom: 17px;
     left: 17px;
@@ -247,6 +247,10 @@
     gap: 18px;
     padding: 22px;
     .productCard {
+      &-wrapper {
+        display: flex;
+        gap: 10px;
+      }
       &-image {
         width: 100%;
         max-width: 190px;

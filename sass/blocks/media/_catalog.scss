@@ -74,6 +74,8 @@
         display: flex;
         align-items: center;
         gap: 6px;
+
+        white-space: nowrap;
       }
     }
   }
@@ -107,6 +109,17 @@
       }
       &__title {
         font-size: 12px;
+      }
+    }
+    &-view {
+      gap: 5px;
+    }
+    &-paginate {
+      margin-top: 30px;
+      &__item {
+        font-size: 14px;
+        width: 32px;
+        height: 32px;
       }
     }
   }
