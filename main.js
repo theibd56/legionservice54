@@ -396,7 +396,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('selectAll')) {
+        const selectAllCheckbox = document.getElementById('selectAll');
+        const productCheckboxes = document.querySelectorAll('.productCard-check input[type="checkbox"]');
 
+        selectAllCheckbox.addEventListener('change', () => {
+            productCheckboxes.forEach(checkbox => {
+                checkbox.checked = selectAllCheckbox.checked;
+            });
+        });
+
+        productCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const allChecked = [...productCheckboxes].every(cb => cb.checked);
+                selectAllCheckbox.checked = allChecked;
+            });
+        });
+    }
+});
 
 
 
