@@ -4,7 +4,7 @@ import 'nouislider/dist/nouislider.css';
 import { Fancybox } from "@fancyapps/ui";
 import { Mask, MaskInput } from "maska"
 
-import './sass/_app.scss';
+import './sass/app.scss';
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import 'swiper/css/bundle';
 
@@ -139,6 +139,24 @@ document.addEventListener("DOMContentLoaded", function () {
         loop: true,
         autoplay: {
             delay: 6000,
+        },
+        breakpoints: {
+            992: {
+                slidesPerView: 4,
+                spaceBetween: 24,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            300: {
+                slidesPerView: 1.2,
+                spaceBetween: 20,
+            },
         }
     });
 

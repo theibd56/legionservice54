@@ -83,7 +83,8 @@
     margin-bottom: 40px;
     &__wrapper {
       display: flex;
-      gap: 70px;
+      column-gap: 70px;
+      row-gap: 22px;
       align-items: flex-start;
       flex-wrap: wrap;
     }
