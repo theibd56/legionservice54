@@ -1,6 +1,9 @@
 .header {
   overflow: hidden;
   //header top
+  &-logo {
+    min-width: 92px;
+  }
   &-top {
     background: #f2f2f2;
     padding: 10px 0;
@@ -134,6 +137,7 @@
     }
   }
   &-search {
+    min-width: 295px;
     width: 485px;
     max-width: 485px;
 
@@ -247,5 +251,26 @@
         color: var(--akcent-1);
       }
     }
+  }
+
+  &-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  &-mobile {
+    display: none;
+  }
+  &-phone, &-burger {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: #EEEFF1;
+    cursor: pointer;
+    transition: all .3s ease;
   }
 }
