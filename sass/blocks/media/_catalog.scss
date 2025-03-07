@@ -1,0 +1,113 @@
+@media screen and (max-width: 1200px) {
+  .catalog-list {
+    grid-template: auto / repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .catalog {
+    &-wrapper {
+      align-items: center;
+    }
+    &-left {
+      display: none;
+    }
+    &-sort {
+      display: none;
+    }
+    &-mobile {
+      display: flex;
+      align-items: center;
+      gap: 19px;
+      height: 45px;
+      .catalog-mobile__sort {
+        position: relative;
+        ul {
+          max-height: 0;
+          visibility: hidden;
+          opacity: 0;
+          margin: 0;
+          padding: 0;
+
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+
+          transition: all .3s ease;
+
+          position: absolute;
+          z-index: 10;
+
+          list-style-type: none;
+
+          border-radius: 12px;
+          background: #FFF;
+          box-shadow: 0px 1px 5.7px 0px rgba(0, 0, 0, 0.25);
+          li {
+            color: #1A1A1A;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 20px; /* 166.667% */
+            padding: 0;
+            margin: 0;
+            &.active {
+              color: #08A826;
+            }
+          }
+        }
+        &:hover {
+          ul {
+            max-height: 500px;
+            padding: 14px;
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+      .catalog-sort__trigger, .catalog-mobile__filter {
+        color: #1A1A1A;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 142.857%; /* 142.857% */
+
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .catalog {
+    &-list {
+      grid-template: auto / repeat(2, 1fr);
+    }
+    &-item {
+      &__title {
+        font-size: 14px;
+        font-weight: 400;
+      }
+      &__count {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .catalog {
+    &-list {
+      gap: 8px;
+    }
+    &-item {
+      img {
+        height: 57px;
+      }
+      &__title {
+        font-size: 12px;
+      }
+    }
+  }
+}

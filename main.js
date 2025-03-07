@@ -172,6 +172,28 @@ document.addEventListener("DOMContentLoaded", function () {
             nextEl: '.js-additional-slider .next'
         }
     });
+
+    const catalogSlider = new Swiper('.js-catalog-slider', {
+        slidesPerView: 5,
+        spaceBetween: 20,
+        speed: 600,
+        loop: true,
+        autoplay: {
+            delay: 6000,
+        },
+        navigation: {
+            nextEl: '.js-catalog-navigation .next',
+            prevEl: '.js-catalog-navigation .prev'
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 4,
+            },
+            320: {
+                slidesPerView: 3,
+            }
+        }
+    });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
