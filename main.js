@@ -1,10 +1,8 @@
-
-
 import Swiper from 'swiper/bundle';
 import * as noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
-import { Fancybox } from "@fancyapps/ui";
-import { Mask, MaskInput } from "maska"
+import {Fancybox} from "@fancyapps/ui";
+import {Mask, MaskInput} from "maska"
 
 import './sass/app.scss';
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
@@ -59,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-
     if (document.getElementById('js-mobile-filter')) {
         const mobileFilter = document.getElementById('js-mobile-filter');
         const mobileFilterTrigger = document.getElementById('js-filter-trigger');
