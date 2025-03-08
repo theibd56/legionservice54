@@ -1,5 +1,33 @@
 @use 'variables';
 
+.swiper-pagination {
+  margin-top: 15px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    background: #C5C5C5;
+    transition: all .3s ease;
+    margin: 0 !important;
+
+    &-active {
+      background: #0F0F0F;
+    }
+  }
+}
+
+.js-swiper-index {
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+  .swiper-slide {
+    height: auto;
+  }
+}
+
 // Обнуление стилей
 
 * {

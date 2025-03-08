@@ -1,0 +1,14 @@
+@media screen and (max-width: 992px) {
+  .hit {
+    &-heading {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hit {
+    margin-bottom: 30px;
+  }
+}

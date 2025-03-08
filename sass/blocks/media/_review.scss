@@ -1,0 +1,43 @@
+@media screen and (max-width: 992px) {
+  .review-slider__navigation {
+    display: none;
+  }
+  .review-slider {
+    .swiper-pagination {
+      position: static;
+      display: flex !important;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .review {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .review {
+    position: relative;
+    padding-bottom: 60px;
+    &-wrapper {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      a {
+        white-space: nowrap;
+      }
+    }
+    &-item {
+      &__name {
+        font-size: 16px;
+      }
+      &__text {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

@@ -96,27 +96,80 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function sliderinit() {
         const sliders = document.querySelectorAll('.js-swiper-index'),
-            prevArrow = document.querySelectorAll('.js-swiper-navigation .prev'),
-            nextArrow = document.querySelectorAll('.js-swiper-navigation .next');
+            prevArrows = document.querySelectorAll('.js-swiper-navigation .prev'),
+            nextArrows = document.querySelectorAll('.js-swiper-navigation .next');
+
+        const swiperInstances = [];
 
         sliders.forEach((slider, index) => {
-            let projectSlider = new Swiper(slider, {
+            const parent = slider.closest('.categories-slider');
+            const isCategoriesSlider = !!parent;
+
+            let manySlider = new Swiper(slider, {
                 slidesPerView: 5,
                 spaceBetween: 20,
                 speed: 600,
                 loop: true,
                 navigation: {
-                    nextEl: nextArrow[index],
-                    prevEl: prevArrow[index],
+                    nextEl: nextArrows[index],
+                    prevEl: prevArrows[index],
                 },
                 autoplay: {
                     delay: 6000,
+                },
+                breakpoints: {
+                    1200: { slidesPerView: 5 },
+                    992: { slidesPerView: 4 },
+                    768: { slidesPerView: 3, spaceBetween: 20 },
+                    576: { slidesPerView: 2.5, spaceBetween: 10 },
+                    300: { slidesPerView: 2, spaceBetween: 10 },
                 }
             });
-        })
+
+            swiperInstances.push({ instance: manySlider, parent, isCategoriesSlider });
+        });
+
+        // Слушаем изменение размера окна
+        window.addEventListener('resize', () => {
+            const windowWidth = window.innerWidth;
+
+            swiperInstances.forEach(({ instance, parent, isCategoriesSlider }, index) => {
+                if (isCategoriesSlider && windowWidth <= 768) {
+                    if (!instance.destroyed) {
+                        instance.destroy(true, true);
+                        parent.classList.remove('swiper-initialized');
+                    }
+                } else if (instance.destroyed) {
+                    const slider = parent ? parent.querySelector('.js-swiper-index') : sliders[index];
+                    instance = new Swiper(slider, {
+                        slidesPerView: 5,
+                        spaceBetween: 20,
+                        speed: 600,
+                        loop: true,
+                        navigation: {
+                            nextEl: nextArrows[index],
+                            prevEl: prevArrows[index],
+                        },
+                        autoplay: {
+                            delay: 6000,
+                        },
+                        breakpoints: {
+                            1200: { slidesPerView: 5 },
+                            992: { slidesPerView: 4 },
+                            768: { slidesPerView: 3 },
+                            576: { slidesPerView: 2.5 },
+                            300: { slidesPerView: 2 },
+                        }
+                    });
+                    swiperInstances[index].instance = instance;
+                }
+            });
+        });
+
+        window.dispatchEvent(new Event('resize'));
     }
 
-    sliderinit()
+    sliderinit();
 
     const reviewSlider = new Swiper('.js-review-slider', {
         slidesPerView: 2,
@@ -129,7 +182,25 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         autoplay: {
             delay: 6000,
+        },
+        pagination: {
+            el: '.js-review-slider .swiper-pagination'
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+            },
+            576: {
+                slidesPerView: 1.5,
+                spaceBetween: 12,
+            },
+            300: {
+                slidesPerView: 1.2,
+                spaceBetween: 12,
+            }
         }
+
     });
 
     const advantagesSlider = new Swiper('.js-advantages-slider', {
