@@ -366,6 +366,9 @@ document.addEventListener('DOMContentLoaded', () => {
         thumbs: {
             swiper: productSliderNav,
         },
+        pagination: {
+          el: '.product-slider .swiper-pagination'
+        },
         navigation: {
             nextEl: ".product-navigate__arrow",
         },
