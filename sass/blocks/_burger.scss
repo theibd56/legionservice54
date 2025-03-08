@@ -1,0 +1,163 @@
+.burger {
+  position: fixed;
+  left: 0;
+  top: 110px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: white;
+  overflow: auto;
+  padding-bottom: 100px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s ease;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  &-menu {
+    margin-bottom: 30px;
+    .menu {
+      display: flex;
+      flex-direction: column;
+      li {
+        border-bottom: 1px solid #E3E3E3;
+        position: relative;
+        margin: 0 !important;
+        a {
+          display: block;
+          color: #333;
+          font-size: 14px;
+          font-weight: 600;
+          padding: 10px;
+          position: relative;
+        }
+        &.has-child {
+          > a {
+            padding-right: 10px;
+            &:before {
+              content: '';
+              display: block;
+              width: 8px;
+              height: 8px;
+
+              border-bottom: 1px solid black;
+              border-right: 1px solid black;
+
+              position: absolute;
+              top: 50%;
+              right: 0;
+              transform: translateY(-50%) rotate(45deg);
+              transition: all .3s ease;
+            }
+          }
+          .submenu {
+            opacity: 0;
+            visibility: hidden;
+            max-height: 0;
+            overflow: auto;
+            transition: all .3s ease;
+            li {
+              border: none;
+            }
+            a {
+              display: flex;
+              align-items: center;
+              gap: 15px;
+            }
+            div {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+          }
+          &.catalog {
+            .submenu {
+              a {
+                &:before {
+                  content: '';
+                  display: block;
+                  width: 8px;
+                  height: 8px;
+
+                  border-bottom: 1px solid black;
+                  border-right: 1px solid black;
+
+                  position: absolute;
+                  top: 50%;
+                  right: 3px;
+                  transform: translateY(-50%) rotate(-45deg);
+                  transition: all .3s ease;
+                }
+              }
+            }
+          }
+          &:hover {
+            > a {
+              &::before {
+                transform: translateY(-50%) rotate(-135deg);
+              }
+            }
+            .submenu {
+              opacity: 1;
+              visibility: visible;
+              max-height: 500px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-content {
+    padding: 13px 15px 60px;
+  }
+  &-social {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 30px;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    a, div {
+      > div {
+        width: 35px;
+        min-width: 35px;
+        height: 35px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+        border: 1px solid #535353;
+      }
+    }
+    .header-address, .header-email {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border: none;
+    }
+    .header-phones {
+      gap: 16px;
+      align-items: flex-start;
+      &__wrapper {
+        margin-top: 5px;
+        border: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
