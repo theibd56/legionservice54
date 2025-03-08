@@ -58,6 +58,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+
+    if (document.getElementById('js-mobile-filter')) {
+        const mobileFilter = document.getElementById('js-mobile-filter');
+        const mobileFilterTrigger = document.getElementById('js-filter-trigger');
+
+        const mobileFilterClose = document.getElementById('js-filter-close');
+        const mobileFilterBack = document.getElementById('js-filter-back');
+
+        [mobileFilterClose, mobileFilterBack, mobileFilterTrigger].forEach((element) => {
+            if (element) {
+                element.addEventListener('click', () => {
+                    mobileFilter.classList.toggle('active');
+                    document.documentElement.classList.toggle('lock');
+                });
+            }
+        });
+    }
+});
+
 // document.addEventListener("DOMContentLoaded", () => {
 //     const headerBurger = document.getElementById("js-header-burger");
 //     const burgerMenu = document.getElementById("js-burger-menu");

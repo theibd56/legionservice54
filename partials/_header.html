@@ -373,3 +373,88 @@
 </section>
 
 <!--мобильный фильтр в каталоге-->
+<section class="mobile-filter" id="js-mobile-filter" >
+    <div class="mobile-filter__content">
+        <div class="mobile-filter__top">
+            <div class="mobile-filter__back" id="js-filter-back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
+                    <path d="M3.29289 11.2929C2.90237 11.6834 2.90237 12.3166 3.29289 12.7071L9.65685 19.0711C10.0474 19.4616 10.6805 19.4616 11.0711 19.0711C11.4616 18.6805 11.4616 18.0474 11.0711 17.6569L5.41421 12L11.0711 6.34315C11.4616 5.95262 11.4616 5.31946 11.0711 4.92893C10.6805 4.53841 10.0474 4.53841 9.65685 4.92893L3.29289 11.2929ZM18 11L4 11V13L18 13V11Z" fill="#535353"/>
+                </svg>
+            </div>
+            <h4 class="mobile-filter__title">
+                Фильтры
+            </h4>
+            <div class="mobile-filter__close" id="js-filter-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
+                    <path d="M11.0927 12.8417L6.39686 17.5375C6.30893 17.6249 6.20406 17.6934 6.08869 17.7387C5.97333 17.784 5.8499 17.8052 5.72602 17.8011C5.60214 17.8052 5.47872 17.784 5.36336 17.7387C5.24799 17.6934 5.14312 17.6249 5.05519 17.5375C4.96782 17.4496 4.89937 17.3447 4.85405 17.2294C4.80873 17.114 4.78749 16.9906 4.79165 16.8667C4.7876 16.7428 4.80889 16.6195 4.85421 16.5041C4.89953 16.3887 4.96792 16.2839 5.05519 16.1959L9.75102 11.5L5.05519 6.80421C4.96782 6.71628 4.89937 6.61141 4.85405 6.49604C4.80873 6.38067 4.78749 6.25725 4.79165 6.13337C4.7876 6.00951 4.80889 5.88612 4.85421 5.77077C4.89953 5.65541 4.96792 5.55053 5.05519 5.46254C5.14312 5.37517 5.24799 5.30672 5.36336 5.2614C5.47872 5.21608 5.60214 5.19484 5.72602 5.199C5.84989 5.19495 5.97328 5.21624 6.08863 5.26156C6.20398 5.30687 6.30887 5.37526 6.39686 5.46254L11.0927 10.1584L15.7885 5.46254C15.8764 5.37517 15.9813 5.30672 16.0967 5.2614C16.2121 5.21608 16.3355 5.19484 16.4594 5.199C16.5832 5.19495 16.7066 5.21624 16.822 5.26156C16.9373 5.30687 17.0422 5.37526 17.1302 5.46254C17.2176 5.55046 17.286 5.65534 17.3313 5.7707C17.3767 5.88607 17.3979 6.00949 17.3937 6.13337C17.3979 6.25725 17.3767 6.38067 17.3313 6.49604C17.286 6.61141 17.2176 6.71628 17.1302 6.80421L12.4344 11.5L17.1302 16.1959C17.2175 16.2838 17.2859 16.3887 17.3313 16.5041C17.3766 16.6194 17.3978 16.7428 17.3937 16.8667C17.3979 16.9906 17.3767 17.114 17.3313 17.2294C17.286 17.3447 17.2176 17.4496 17.1302 17.5375C17.0423 17.6249 16.9374 17.6934 16.822 17.7387C16.7067 17.784 16.5832 17.8052 16.4594 17.8011C16.3355 17.8052 16.2121 17.784 16.0967 17.7387C15.9813 17.6934 15.8764 17.6249 15.7885 17.5375L11.0927 12.8417Z" fill="#535353"/>
+                </svg>
+            </div>
+        </div>
+        <div class="mobile-filter__wrapper">
+            <div class="catalog-menu">
+                <div class="catalog-menu__title">
+                    <span>Каталог</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                        <path d="M13.399 6.15704C13.2646 6.01964 13.1055 5.95039 12.9211 5.95039C12.7383 5.95039 12.5787 6.01909 12.4443 6.15649L8.50676 10.1823L4.55578 6.14275C4.43053 6.01469 4.27357 5.95039 4.08543 5.95039C3.89729 5.95039 3.73602 6.01909 3.60163 6.15649C3.53716 6.21952 3.486 6.2954 3.45133 6.37943C3.41666 6.46347 3.39921 6.55388 3.40005 6.64509C3.40005 6.83195 3.46725 6.99518 3.60163 7.13258L8.13048 11.7492C8.18423 11.8042 8.24282 11.8427 8.30518 11.8663C8.36997 11.8894 8.43815 11.9009 8.50676 11.9004C8.57879 11.9004 8.64598 11.8888 8.70834 11.8663C8.77435 11.841 8.83403 11.801 8.88304 11.7492L13.4119 7.11884C13.5377 6.99024 13.6 6.8325 13.6 6.64454C13.6 6.45712 13.5334 6.29444 13.399 6.15704Z" fill="#1A1A1A"/>
+                    </svg>
+                </div>
+                <ul class="catalog-menu__list">
+                    <li><a href="#" class="catalog-menu__item">Категория</a></li>
+                    <li><a href="#" class="catalog-menu__item">Категория</a></li>
+                    <li><a href="#" class="catalog-menu__item">Категория</a></li>
+                    <li><a href="#" class="catalog-menu__item">Категория</a></li>
+                    <li><a href="#" class="catalog-menu__item">Категория</a></li>
+                    <li><a href="#" class="catalog-menu__item">Категория</a></li>
+                </ul>
+            </div>
+            <div class="catalog-filter">
+                <div class="catalog-filter__item">
+                    <div class="catalog-filter__title">
+                        Цена, ₽
+                    </div>
+                    <div class="catalog-filter__price">
+                        <div class="catalog-filter__inputs">
+                            <input type="number" placeholder="от 705">
+                            <input type="number" placeholder="до 176 444">
+                        </div>
+                        <div id="priceRange" class="catalog-filter__range"></div>
+                    </div>
+                </div>
+                <div class="catalog-filter__item">
+                    <div class="catalog-filter__title">
+                        Наши предложения
+                    </div>
+                    <div class="catalog-filter__wrapper">
+                        <div class="catalog-filter__input">
+                            <input id="check2" type="checkbox">
+                            <label for="check2">Хит</label>
+                        </div>
+                        <div class="catalog-filter__input">
+                            <input id="check3" type="checkbox">
+                            <label for="check3">Советуем</label>
+                        </div>
+                        <div class="catalog-filter__input">
+                            <input id="check4" type="checkbox">
+                            <label for="check4">Новинка</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog-filter__item">
+                    <div class="catalog-filter__title">
+                        Наши предложения
+                    </div>
+                    <div class="catalog-filter__wrapper">
+                        <div class="catalog-filter__input">
+                            <input id="check5" type="checkbox">
+                            <label for="check5">В наличии</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog-filter__buttons">
+                    <button class="catalog-filter__submit">Показать 90 товаров</button>
+                    <button class="catalog-filter__reset">Сбросить все фильтры</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
