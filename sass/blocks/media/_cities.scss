@@ -1,0 +1,20 @@
+@media screen and (max-width: 992px) {
+  .cities-wrapper {
+    grid-template: auto / repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cities-wrapper {
+    grid-template: auto / repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cities.fancybox__content {
+    padding: 40px 20px;
+  }
+  .cities-wrapper {
+    grid-template: auto / repeat(2, 1fr);
+  }
+}

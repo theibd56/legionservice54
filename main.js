@@ -43,8 +43,20 @@ script.onload = () => {
 
         map.geoObjects.add(marker);
     }
-
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.getElementById('js-cities-banner');
+    const closeBtn = document.querySelector('.header-cities__close');
+
+    setTimeout(() => {
+        banner.classList.add('active')
+    }, 4000);
+
+    closeBtn.addEventListener('click', () => {
+        banner.classList.remove('active')
+    });
+});
 
 // document.addEventListener("DOMContentLoaded", () => {
 //     const headerBurger = document.getElementById("js-header-burger");
