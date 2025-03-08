@@ -170,6 +170,20 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         navigation: {
             nextEl: '.js-additional-slider .next'
+        },
+        breakpoints: {
+            1200: {
+                slidesPerView: 2.3,
+            },
+            992: {
+                slidesPerView: 1.8,
+            },
+            576: {
+                slidesPerView: 1.4,
+            },
+            300: {
+                slidesPerView: 1.3,
+            }
         }
     });
 

@@ -4,9 +4,36 @@
 
 @media (max-width: 992px) {
   .cart {
+    &-container {
+      position: relative;
+    }
+    &-content {
+      flex-direction: column;
+    }
+    &-top {
+      &__left {
+        width: 100%;
+        justify-content: space-between;
+      }
+      &__right {
+        gap: 20px;
 
-
-
+        position: absolute;
+        right: 15px;
+        top: 13px;
+        a {
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+    &-left {
+      width: 100%;
+    }
+    &-right {
+      width: 100%;
+    }
 
     &-mobile {
       display: flex !important;
@@ -52,6 +79,24 @@
           height: 40px;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .cart {
+    &-count {
+      display: none;
+    }
+    &-top {
+      margin-bottom: 18px;
+      &__left {
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+    }
+    &-delete {
+      gap: 2px;
     }
   }
 }
