@@ -1,5 +1,4 @@
 .header {
-  overflow: hidden;
   //header top
   &-logo {
     min-width: 92px;
@@ -307,6 +306,71 @@
     row-gap: 20px;
     li {
       margin: 0;
+      &.has-child {
+        position: relative;
+        > a {
+          padding-right: 18px;
+          position: relative;
+          &:before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 6px;
+
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+
+            position: absolute;
+            top: 40%;
+            right: 0;
+            transform: translateY(-50%) rotate(45deg);
+            transition: all .2s ease;
+          }
+        }
+        .submenu {
+          max-height: 0;
+          opacity: 0;
+          visibility: hidden;
+          transition: all .3s ease;
+          position: absolute;
+          left: 0;
+          top: 25px;
+          z-index: 20;
+          border-radius: 16px;
+          background: #FFF;
+          box-shadow: 0px 4px 5.8px 0px rgba(0, 0, 0, 0.07);
+          display: inline-flex;
+          padding: 24px 33px;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 14px;
+          a {
+            color: #1A1A1A;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 24px; /* 171.429% */
+            text-transform: none;
+            white-space: nowrap;
+            &:hover {
+              color: #08A826;
+            }
+          }
+        }
+        &:hover {
+          > a {
+            &::before {
+              top: 60%;
+              transform: translateY(-50%) rotate(-135deg);
+            }
+          }
+          .submenu {
+            opacity: 1;
+            visibility: visible;
+            max-height: 500px;
+          }
+        }
+      }
     }
     a {
       font-weight: 700;
