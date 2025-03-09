@@ -94,6 +94,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.mobile-catalog__item');
+
+    items.forEach(item => {
+        const modal = item.querySelector('.mobile-catalog__modal');
+        const openLink = item.querySelector('a');
+        const closeButton = item.querySelector('.mobile-catalog__close');
+        const backButton = item.querySelector('.mobile-catalog__back');
+
+        // Открытие модалки
+        openLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('active');
+        });
+
+        // Закрытие модалки
+        [closeButton, backButton].forEach(btn => {
+            btn.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+        });
+    });
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     const headerBurger = document.getElementById("js-burger-trigger");
     const burgerMenu = document.getElementById("js-burger-menu");
