@@ -39,6 +39,7 @@
       position: absolute;
       left: 10px;
       top: 25px;
+      z-index: 50;
       box-shadow: 0px -1px 14px 0px rgba(230, 235, 243, 0.80);
 
       opacity: 0;
@@ -173,6 +174,7 @@
     }
   }
   &-catalog {
+    position: relative;
     &__trigger {
       display: flex;
       align-items: center;
@@ -193,13 +195,179 @@
       &:hover {
         opacity: 0.7;
       }
+      &.active {
+        .header-catalog__ico {
+          .close {
+            display: flex;
+          }
+          .open {
+            display: none;
+          }
+        }
+      }
     }
     &__ico {
       display: flex;
       align-items: center;
       justify-content: center;
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       .close {
         display: none;
+      }
+      .open {
+        display: flex;
+      }
+    }
+
+    &__dropdown {
+      border-radius: 20px;
+      background: #FFF;
+      box-shadow: 0px 4px 5.8px 0px rgba(0, 0, 0, 0.07);
+
+      display: flex;
+
+      position: absolute;
+      top: 50px;
+      z-index: 30;
+
+      max-height: 0;
+      opacity: 0 ;
+      visibility: hidden;
+      transition: all .3s ease;
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        max-height: 1000px;
+      }
+    }
+    &__nav {
+      width: 310px;
+      padding: 28px 30px !important;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      li {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        color: #333;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px;
+        padding-right: 20px;
+        border-radius: 8px;
+
+        cursor: pointer;
+        transition: all .3s ease;
+
+        position: relative;
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        &::before {
+          content: '';
+          display: block;
+          width: 6px;
+          height: 6px;
+
+          border-bottom: 1px solid transparent;
+          border-right: 1px solid transparent;
+
+          position: absolute;
+          top: 50%;
+          right: 11px;
+          transform: translateY(-50%) rotate(-45deg);
+          transition: all .3s ease;
+        }
+        &.active {
+          background: #F3F4F6;
+          div {
+            path {
+              fill: #08A826;
+            }
+          }
+          &::before {
+            border-bottom: 1px solid #08A826;
+            border-right: 1px solid #08A826;
+          }
+        }
+        &:hover {
+          background: #F3F4F6;
+        }
+      }
+    }
+    &__content {
+      transition: all .3s ease;
+      &.active {
+        width: 420px;
+        padding: 30px;
+      }
+    }
+    &__item {
+      display: none;
+      &.active {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+    }
+    &__inner {
+      h4 {
+        margin-bottom: 16px;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+        li {
+          padding: 0;
+          margin: 0;
+          line-height: 1.2;
+          &:hover {
+            a {
+              color: #08A826;
+              &::before {
+                border-bottom: 1px solid #08A826;
+                border-right: 1px solid #08A826;
+              }
+            }
+          }
+        }
+        a {
+          color: #000;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 1.2;
+          position: relative;
+          padding-right: 15px;
+          &::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 6px;
+
+            border-bottom: 1px solid transparent;
+            border-right: 1px solid transparent;
+
+            position: absolute;
+            top: 50%;
+            right: 0px;
+            transform: translateY(-50%) rotate(-45deg);
+            transition: all .3s ease;
+          }
+        }
       }
     }
   }

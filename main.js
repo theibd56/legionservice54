@@ -86,6 +86,50 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const trigger = document.getElementById('js-catalog-trigger');
+    const dropdown = document.getElementById('js-catalog-dropdown');
+    const navItems = document.querySelectorAll('.header-catalog__nav li');
+    const content = document.querySelector('.header-catalog__content');
+    const contentItems = document.querySelectorAll('.header-catalog__item');
+
+    trigger.addEventListener('click', () => {
+        trigger.classList.toggle('active');
+        dropdown.classList.toggle('active');
+
+        navItems.forEach(i => i.classList.remove('active'));
+        contentItems.forEach(c => c.classList.remove('active'));
+        content.classList.remove('active');
+    });
+
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const category = item.getAttribute('data-tab');
+
+            navItems.forEach(i => i.classList.remove('active'));
+            contentItems.forEach(c => c.classList.remove('active'));
+            content.classList.remove('active');
+
+            item.classList.add('active');
+            const targetContent = document.querySelector(`.header-catalog__item[data-tab="${category}"]`);
+            if (targetContent) {
+                targetContent.classList.add('active');
+                content.classList.add('active');
+            }
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('#js-catalog-dropdown') && !e.target.closest('#js-catalog-trigger')) {
+            trigger.classList.remove('active');
+            dropdown.classList.remove('active');
+            navItems.forEach(i => i.classList.remove('active'));
+            contentItems.forEach(c => c.classList.remove('active'));
+            content.classList.remove('active');
+        }
+    });
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.querySelector(".header-search input");
     const resetButton = document.getElementById("js-search-reset");
