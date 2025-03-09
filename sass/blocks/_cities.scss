@@ -76,3 +76,72 @@
     }
   }
 }
+
+.cities-mobile {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  z-index: 10005;
+  background: white;
+  padding: 20px;
+
+  overflow: auto;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all .3s ease;
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__search {
+    position: relative;
+    margin-bottom: 25px;
+    input {
+      font-size: 14px;
+      font-weight: 400;
+      padding: 0 15px;
+      padding-right: 40px;
+      height: 48px;
+      border-radius: 10px;
+      border: 1px solid #DADCDE;
+      background: #FFF;
+
+      outline: none;
+      width: 100%;
+      &::placeholder {
+        color: #93999E;
+      }
+    }
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: none;
+      outline: none;
+
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10px;
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template: auto / repeat(4, 1fr);
+    gap: 10px;
+  }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

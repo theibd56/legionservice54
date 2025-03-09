@@ -75,6 +75,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('js-cities-mobile')) {
+        const mobileCities = document.getElementById('js-cities-mobile');
+        const mobileCitiesTrigger = document.getElementById('js-cities-trigger');
+
+        const mobileCitiesClose = document.getElementById('js-cities-close');
+        const mobileCitiesBack = document.getElementById('js-cities-back');
+
+        [mobileCitiesClose, mobileCitiesBack, mobileCitiesTrigger].forEach((element) => {
+            if (element) {
+                element.addEventListener('click', () => {
+                    mobileCities.classList.toggle('active');
+                    document.documentElement.classList.toggle('lock');
+                });
+            }
+        });
+    }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     const headerBurger = document.getElementById("js-burger-trigger");
     const burgerMenu = document.getElementById("js-burger-menu");
