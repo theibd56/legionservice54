@@ -180,6 +180,10 @@
         }
       }
     }
+    &.just-title {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   //footer bottom
